@@ -9,7 +9,9 @@ from generate_employees import populate_employees
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("mode", type=int, help="Mode of operation")
-    parser.add_argument("employee_data", nargs='*', help="Employee data (for modes 2 and 5)")
+    parser.add_argument(
+        "employee_data", nargs="*", help="Employee data (for modes 2 and 5)"
+    )
     args = parser.parse_args()
 
     db = EmployeeDatabase()
@@ -43,17 +45,21 @@ def main():
 
     elif args.mode == 4:
         employees = populate_employees(999900)  # 1 million with the special ones
-        special_employees = populate_employees(100)  # 100 with surname starting with "F"
+        special_employees = populate_employees(
+            100
+        )  # 100 with surname starting with "F"
         db.bulk_insert(employees + special_employees)
         print("Bulk employees inserted successfully.")
 
     elif args.mode == 5:
         result, exec_time = db.get_filtered_employees("Male", "F")
-        print(f"Filtered Employees: {len(result)} found, Execution Time: {exec_time:.4f} seconds")
+        print(
+            f"Filtered Employees: {len(result)} found, Execution Time: {exec_time:.4f} seconds"
+        )
 
     else:
         print("Invalid mode. Please use a mode between 1 and 5.")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

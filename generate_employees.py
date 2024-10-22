@@ -4,7 +4,18 @@ from employee import Employee
 
 
 def populate_employees(n):
-    first_names = ["Ivan", "Petr", "Sergey", "Dmitry", "Alexander", "Vladimir", "Andrey", "Pavel", "Mikhail", "Nikita"]
+    first_names = [
+        "Ivan",
+        "Petr",
+        "Sergey",
+        "Dmitry",
+        "Alexander",
+        "Vladimir",
+        "Andrey",
+        "Pavel",
+        "Mikhail",
+        "Nikita",
+    ]
     last_names = ["Ivanov", "Petrov", "Sidorov", "Fedorov", "Fabianov", "Fedoseev"]
     genders = ["Male", "Female"]
     employees = []
