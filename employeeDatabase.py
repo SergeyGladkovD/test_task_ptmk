@@ -35,8 +35,8 @@ class EmployeeDatabase:
         conn = sqlite3.connect('employee.db')
         cursor = conn.cursor()
         cursor.executemany("""
-        INSERT INTO employees (full_name, birth_date, gender) VALUES (?, ?, ?)"""),
-        [(emp.full_name, emp.birth_date, emp.gender) for emp in employees]
+        INSERT INTO employees (full_name, birth_date, gender) VALUES (?, ?, ?)""",
+        [(emp.full_name, emp.birth_date, emp.gender) for emp in employees])
         conn.commit()
         conn.close()
 
